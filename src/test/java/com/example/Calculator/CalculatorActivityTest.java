@@ -35,4 +35,12 @@ public class CalculatorActivityTest extends TestCase {
         assertNotNull( activity.getFragmentManager()
                 .findFragmentById( R.id.display_fragment ) );
     }
+
+    @Test
+    public void shouldHaveButtonFragment() throws Exception
+    {
+        assertNotNull(activity.getFragmentManager().findFragmentById(R.id.button_fragment));
+    }
+
+
 }
