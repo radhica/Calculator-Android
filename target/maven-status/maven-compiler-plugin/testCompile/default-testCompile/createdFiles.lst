@@ -1,4 +1,5 @@
 com/support/Assert/ResourceLocator.class
-com/example/Calculator/CalculatorActivityTest.class
+com/example/Calculator/DisplayFragmentTest.class
 com/support/Assert/Assert.class
+com/example/Calculator/CalculatorActivityTest.class
 com/support/Assert/FragmentUtil.class

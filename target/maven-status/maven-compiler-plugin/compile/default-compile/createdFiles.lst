@@ -1,7 +1,9 @@
-com/example/Calculator/CalculatorActivity.class
+com/example/Calculator/R$id.class
 com/example/Calculator/R$attr.class
+com/example/Calculator/CalculatorActivity.class
 com/example/Calculator/R.class
 com/example/Calculator/R$drawable.class
+com/example/Calculator/DisplayFragment.class
 com/example/Calculator/R$string.class
-com/example/Calculator/BuildConfig.class
 com/example/Calculator/R$layout.class
+com/example/Calculator/BuildConfig.class
