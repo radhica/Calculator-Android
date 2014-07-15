@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
+    <style name="Display">
+        <item name = "android:paddingTop">@dimen/text_padding</item>
+    </style>
+
     <!--BaseButton-->
     <style name="BaseButton">
             <item name="android:layout_width">@dimen/button_dimensions</item>
