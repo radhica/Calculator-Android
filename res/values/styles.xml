@@ -16,29 +16,29 @@
 
     <!--Number-->
     <style name="Number" parent="BaseButton">
-        <item name="android:background">@color/brown</item>
-    </style>
+        <item name="android:background">@drawable/number_key</item>
+</style>
 
     <!--Operators-->
     <style name="Operator" parent="BaseButton">
-        <item name="android:background">@color/green</item>
+        <item name="android:background">@drawable/operator_key</item>
     </style>
 
     <!--Equals -->
     <style name="Equals" parent="BaseButton">
         <item name="android:layout_width">200dp</item>
-        <item name="android:background">@color/blue</item>
+        <item name="android:background">@drawable/equals_key</item>
     </style>
 
     <!--Clear-->
     <style name="Clear" parent="BaseButton">
-        <item name="android:background">@color/red</item>
+        <item name="android:background">@drawable/clear_key</item>
     </style>
 
     <!--Zero-->
     <style name="Zero" parent="BaseButton">
             <item name="android:layout_width">130dp</item>
-            <item name="android:background">@color/brown</item>
+        <item name="android:background">@drawable/number_key</item>
     </style>
 
 

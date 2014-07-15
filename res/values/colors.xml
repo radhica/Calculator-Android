@@ -3,6 +3,15 @@
     <color name="nearly_black">#ff313131</color>
     <color name="brown">#876D13</color>
     <color name="green">#668113</color>
+    <color name="selected_green">#ff128140</color>
+    <color name="focus_green">#ff0a6081</color>
     <color name="red">#ff810102</color>
+    <color name="selected_red">#ff81106b</color>
+    <color name="focus_red">#ff0a6481</color>
     <color name="blue">#268474</color>
+    <color name="selected_blue">#ff120c84</color>
+    <color name="focus_blue">#ff840424</color>
+    <color name="focused_yellow">#ffafb315</color>
+    <color name="selected_brown">#ff604613</color>
+
 </resources>

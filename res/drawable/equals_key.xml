@@ -4,15 +4,14 @@
     <!--Pressed-->
     <item
             android:state_pressed="true"
-            android:drawable="@color/selected_brown"/>
+            android:drawable="@color/selected_blue"/>
 
     <!--Focused-->
     <item
             android:state_focused="true"
-            android:drawable="@color/focused_yellow"/>
+            android:drawable="@color/focus_blue"/>
 
     <!--Normal-->
     <item
-            android:drawable="@color/brown"/>
-
+            android:drawable="@color/blue"/>
 </selector>
