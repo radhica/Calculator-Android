@@ -9,9 +9,7 @@
     <!--1-->
     <Button
             android:id="@+id/key1"
-            android:layout_width="60dp"
-            android:layout_height="60dp"
-            android:layout_margin="5dp"
+            style="@style/Number"
             android:text="@string/key1"/>
 
     <!--2-->
@@ -19,17 +17,13 @@
             android:id="@+id/key2"
             android:layout_toRightOf="@id/key1"
             android:layout_alignBaseline="@id/key1"
-            android:layout_width="60dp"
-            android:layout_height="60dp"
-            android:layout_margin="5dp"
+            style="@style/Number"
             android:text="@string/key2"/>
 
     <!--3-->
     <Button
             android:id="@+id/key3"
-            android:layout_width="60dp"
-            android:layout_height="60dp"
-            android:layout_margin="5dp"
+            style="@style/Number"
             android:layout_toRightOf="@id/key2"
             android:layout_alignBaseline="@id/key2"
             android:text="@string/key3"/>
@@ -37,9 +31,7 @@
     <!--4-->
     <Button
             android:id="@+id/key4"
-            android:layout_width="60dp"
-            android:layout_height="60dp"
-            android:layout_margin="5dp"
+            style="@style/Number"
             android:layout_below="@id/key1"
             android:text="@string/key4"/>
 
@@ -47,9 +39,7 @@
     <Button
             android:id="@+id/key5"
             android:layout_toRightOf="@id/key4"
-            android:layout_width="60dp"
-            android:layout_height="60dp"
-            android:layout_margin="5dp"
+            style="@style/Number"
             android:layout_below="@id/key2"
             android:text="@string/key5"/>
 
@@ -57,18 +47,14 @@
     <Button
             android:id = "@+id/key6"
             android:layout_toRightOf="@id/key5"
-            android:layout_width="60dp"
-            android:layout_height="60dp"
-            android:layout_margin="5dp"
+            style="@style/Number"
             android:layout_below="@id/key3"
             android:text="@string/key6"/>
 
     <!--7-->
     <Button
             android:id="@+id/key7"
-            android:layout_width="60dp"
-            android:layout_height="60dp"
-            android:layout_margin="5dp"
+            style="@style/Number"
             android:layout_below="@id/key4"
             android:text="@string/key7"/>
 
@@ -76,9 +62,7 @@
     <Button
             android:id="@+id/key8"
             android:layout_toRightOf="@id/key7"
-            android:layout_width="60dp"
-            android:layout_height="60dp"
-            android:layout_margin="5dp"
+            style="@style/Number"
             android:layout_below="@id/key5"
             android:text="@string/key8"/>
 
@@ -86,27 +70,21 @@
     <Button
             android:id = "@+id/key9"
             android:layout_toRightOf="@id/key8"
-            android:layout_width="60dp"
-            android:layout_height="60dp"
-            android:layout_margin="5dp"
+            style="@style/Number"
             android:layout_below="@id/key6"
             android:text="@string/key9"/>
 
     <!--0-->
     <Button
             android:id = "@+id/key0"
-            android:layout_width="130dp"
-            android:layout_height="60dp"
-            android:layout_margin="5dp"
+            style="@style/Zero"
             android:layout_below="@id/key7"
             android:text="@string/key0"/>
 
     <!--%-->
     <Button
             android:id = "@+id/keyMod"
-            android:layout_width="60dp"
-            android:layout_height="60dp"
-            android:layout_margin="5dp"
+            style="@style/Operator"
             android:layout_toRightOf="@id/key0"
             android:layout_below="@id/key9"
             android:text="@string/keyMod"/>
@@ -114,9 +92,7 @@
     <!--+-->
     <Button
             android:id = "@+id/keyAdd"
-            android:layout_width="60dp"
-            android:layout_height="60dp"
-            android:layout_margin="5dp"
+            style="@style/Operator"
             android:layout_toRightOf="@id/key3"
             android:text="@string/keyAdd"/>
             />
@@ -124,9 +100,7 @@
     <!-- - -->
     <Button
             android:id = "@+id/keySub"
-            android:layout_width="60dp"
-            android:layout_height="60dp"
-            android:layout_margin="5dp"
+            style="@style/Operator"
             android:layout_toRightOf="@id/key6"
             android:layout_below="@id/keyAdd"
             android:text="@string/keySub"/>
@@ -134,9 +108,7 @@
     <!-- * -->
     <Button
             android:id = "@+id/keyMul"
-            android:layout_width="60dp"
-            android:layout_height="60dp"
-            android:layout_margin="5dp"
+            style="@style/Operator"
             android:layout_toRightOf="@id/key9"
             android:layout_below="@id/keySub"
             android:text="@string/keyMul"/>
@@ -144,28 +116,22 @@
     <!-- / -->
     <Button
             android:id = "@+id/keyDiv"
-            android:layout_width="60dp"
-            android:layout_height="60dp"
-            android:layout_margin="5dp"
+            style="@style/Operator"
             android:layout_toRightOf="@id/keyMod"
             android:layout_below="@id/keyMul"
             android:text="@string/keyDiv"/>
 
-    !--1-->
+    <!--Clear-->
     <Button
             android:id="@+id/keyClear"
-            android:layout_width="60dp"
-            android:layout_height="60dp"
-            android:layout_margin="5dp"
+            style="@style/Clear"
             android:layout_below="@id/key0"
             android:text="@string/keyClear"/>
 
-    <!-- / -->
+    <!-- = -->
     <Button
             android:id = "@+id/keyEqual"
-            android:layout_width="200dp"
-            android:layout_height="60dp"
-            android:layout_margin="5dp"
+           style="@style/Equals"
             android:layout_toRightOf="@id/keyClear"
             android:layout_below="@id/key0"
             android:text="@string/keyEqual"/>

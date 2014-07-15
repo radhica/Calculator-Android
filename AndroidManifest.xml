@@ -9,7 +9,8 @@
     <application
             android:label="@string/app_name"
             android:icon="@drawable/ic_launcher"
-            android:name=".CalculatorApplication">
+            android:name=".CalculatorApplication"
+            android:theme="@android:style/Theme.Holo.Dialog.NoActionBar">
         <activity android:name=".CalculatorActivity"
                   android:label="@string/app_name">
             <intent-filter>
