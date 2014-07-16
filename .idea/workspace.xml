@@ -26,13 +26,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b31759cc-e220-460a-9614-2c71ae767c4e" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/Calculator.apk" afterPath="$PROJECT_DIR$/target/Calculator.apk" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/example/Calculator/ButtonFragment.java" afterPath="$PROJECT_DIR$/src/main/java/com/example/Calculator/ButtonFragment.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/com/example/Calculator/ButtonFragmentTest.java" afterPath="$PROJECT_DIR$/src/test/java/com/example/Calculator/ButtonFragmentTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/example/Calculator/CalculatorActivity.java" afterPath="$PROJECT_DIR$/src/main/java/com/example/Calculator/CalculatorActivity.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/com/example/Calculator/CalculatorActivityTest.java" afterPath="$PROJECT_DIR$/src/test/java/com/example/Calculator/CalculatorActivityTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/example/Calculator/CalculatorApplication.java" afterPath="$PROJECT_DIR$/src/main/java/com/example/Calculator/CalculatorApplication.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/example/Calculator/DisplayFragment.java" afterPath="$PROJECT_DIR$/src/main/java/com/example/Calculator/DisplayFragment.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Calculator.iws" />
@@ -59,18 +53,18 @@
       <file leaf-file-name="CalculatorActivity.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/example/Calculator/CalculatorActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-6.0" vertical-offset="0" max-vertical-offset="855">
+            <state vertical-scroll-proportion="-3.0" vertical-offset="75" max-vertical-offset="855">
               <caret line="12" column="80" selection-start-line="12" selection-start-column="80" selection-end-line="12" selection-end-column="80" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CalculatorActivityTest.java" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="CalculatorActivityTest.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/test/java/com/example/Calculator/CalculatorActivityTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-10.96" vertical-offset="356" max-vertical-offset="795">
-              <caret line="47" column="0" selection-start-line="47" selection-start-column="0" selection-end-line="47" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.65831435" vertical-offset="356" max-vertical-offset="795">
+              <caret line="48" column="84" selection-start-line="48" selection-start-column="84" selection-end-line="48" selection-end-column="84" />
               <folding>
                 <element signature="e#670#671#0" expanded="true" />
                 <element signature="e#711#712#0" expanded="true" />
@@ -79,11 +73,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ButtonFragmentTest.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="ButtonFragmentTest.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/java/com/example/Calculator/ButtonFragmentTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="1.0296128" vertical-offset="628" max-vertical-offset="1275">
-              <caret line="84" column="2" selection-start-line="78" selection-start-column="8" selection-end-line="84" selection-end-column="2" />
+            <state vertical-scroll-proportion="-16.28" vertical-offset="628" max-vertical-offset="1275">
+              <caret line="81" column="72" selection-start-line="81" selection-start-column="72" selection-end-line="81" selection-end-column="72" />
               <folding />
             </state>
           </provider>
@@ -127,10 +121,10 @@
         <option value="$PROJECT_DIR$/src/main/java/com/example/Calculator/DisplayFragment.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/example/Calculator/CalculatorApplication.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/example/Calculator/CalculatorStateFragment.java" />
-        <option value="$PROJECT_DIR$/src/test/java/com/example/Calculator/CalculatorActivityTest.java" />
         <option value="$PROJECT_DIR$/src/test/java/com/example/Calculator/CalculatorStateFragmentTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/example/Calculator/CalculatorActivity.java" />
         <option value="$PROJECT_DIR$/src/test/java/com/example/Calculator/ButtonFragmentTest.java" />
+        <option value="$PROJECT_DIR$/src/test/java/com/example/Calculator/CalculatorActivityTest.java" />
       </list>
     </option>
   </component>
@@ -1008,30 +1002,30 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/com/example/Calculator/CalculatorActivityTest.java">
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/example/Calculator/ButtonFragmentTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-10.96" vertical-offset="356" max-vertical-offset="795">
-          <caret line="47" column="0" selection-start-line="47" selection-start-column="0" selection-end-line="47" selection-end-column="0" />
-          <folding>
-            <element signature="e#670#671#0" expanded="true" />
-            <element signature="e#711#712#0" expanded="true" />
-          </folding>
+        <state vertical-scroll-proportion="-16.28" vertical-offset="628" max-vertical-offset="1275">
+          <caret line="81" column="72" selection-start-line="81" selection-start-column="72" selection-end-line="81" selection-end-column="72" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/example/Calculator/CalculatorActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-6.0" vertical-offset="0" max-vertical-offset="855">
+        <state vertical-scroll-proportion="-3.0" vertical-offset="75" max-vertical-offset="855">
           <caret line="12" column="80" selection-start-line="12" selection-start-column="80" selection-end-line="12" selection-end-column="80" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/com/example/Calculator/ButtonFragmentTest.java">
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/example/Calculator/CalculatorActivityTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.0296128" vertical-offset="628" max-vertical-offset="1275">
-          <caret line="84" column="2" selection-start-line="78" selection-start-column="8" selection-end-line="84" selection-end-column="2" />
-          <folding />
+        <state vertical-scroll-proportion="0.65831435" vertical-offset="356" max-vertical-offset="795">
+          <caret line="48" column="84" selection-start-line="48" selection-start-column="84" selection-end-line="48" selection-end-column="84" />
+          <folding>
+            <element signature="e#670#671#0" expanded="true" />
+            <element signature="e#711#712#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

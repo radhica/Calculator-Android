@@ -46,7 +46,7 @@ public class CalculatorActivityTest extends TestCase {
     public void shouldHaveCalculatorStateFragment() throws Exception
     {
         assertNotNull( activity.getFragmentManager()
-                .findFragmentByTag( "calculator state" ) );
+                .findFragmentByTag( CalculatorActivity.CALCULATOR_STATE_FRAGMENT_TAG ) );
     }
 
 
