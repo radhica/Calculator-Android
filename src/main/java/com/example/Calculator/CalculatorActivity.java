@@ -3,6 +3,12 @@ package com.example.Calculator;
 import android.app.Activity;
 import android.os.Bundle;
 import android.util.Log;
+import android.widget.Toast;
+import com.example.Events.NumberButtonEvent;
+import com.squareup.otto.Bus;
+import com.squareup.otto.Subscribe;
+
+import java.util.concurrent.Phaser;
 
 public class CalculatorActivity extends Activity {
     /**
@@ -25,6 +31,17 @@ public class CalculatorActivity extends Activity {
                 .commit();
     }
 
+    /**
+     * Handles the selection of a number.
+     *
+     * @param event - number entered
+     */
+    @Subscribe
+    public void onNumberSelected( NumberButtonEvent event )
+    {
+        Toast.makeText(this,"Clicked: " + event.getNumber(),Toast.LENGTH_SHORT).show();
+    }
+
     @Override
     protected void onStart() {
         super.onStart();
@@ -33,12 +50,19 @@ public class CalculatorActivity extends Activity {
     @Override
     protected void onResume() {
         super.onResume();
+        
         Log.d(TAG,"onResume");
+
+        getBus().register( this );
+        
     }
     @Override
     protected void onPause() {
         super.onPause();
+
         Log.d(TAG,"onPause");
+
+        getBus().unregister(this);
     }
     @Override
     protected void onStop() {
@@ -49,5 +73,9 @@ public class CalculatorActivity extends Activity {
     protected void onDestroy() {
         super.onDestroy();
         Log.d(TAG,"onDestroy");
+    }
+
+    protected Bus getBus() {
+        return CalculatorApplication.getInstance().getBus();
     }
 }

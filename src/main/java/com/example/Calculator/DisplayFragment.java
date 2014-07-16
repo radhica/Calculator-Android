@@ -7,12 +7,16 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
 
 /**
  * Created by rsampath on 7/14/14.
  */
 public class DisplayFragment extends Fragment {
     private static final String TAG = "Lifecycle " + DisplayFragment.class.getSimpleName();
+    private View layout;
+    private EditText displayText;
+
 
     @Override
     public void onAttach(Activity activity) {
@@ -28,19 +32,22 @@ public class DisplayFragment extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View layout = inflater.inflate(R.layout.display,container, false);
+        layout = inflater.inflate(R.layout.display,container, false);
+        displayText = findViewById(R.id.display_fragment);
         Log.d(TAG, "onCreateView()");
         return layout;
     }
+
+    public void onCalculatorStateChanged(){
+
+    }
+
 
     @Override
     public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
         Log.d(TAG, "onActivityCreated()");
     }
-
-
-
 
     @Override
     public void onStart() {

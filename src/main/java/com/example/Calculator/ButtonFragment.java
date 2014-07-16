@@ -8,13 +8,69 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.Toast;
+import com.example.Events.NumberButtonEvent;
+import com.example.Events.OperatorButtonEvent;
+
+import static com.example.Calculator.CalculatorApplication.postToBus;
 
 /**
  * Created by rsampath on 7/14/14.
  */
-public class ButtonFragment extends Fragment
+public class ButtonFragment extends BaseFragment
 {
     private static final String TAG = "LIFECYCLE" + ButtonFragment.class.getSimpleName();
+    private View layout;
+
+    private void configureNumberKeys(){
+        int[] keys = new int[]{R.id.key0,R.id.key1,R.id.key2,R.id.key3,R.id.key4,R.id.key5,R.id.key6,R.id.key7,R.id.key8,
+                R.id.key9};
+        for(int i = 0; i < keys.length; i++)
+            configureNumberKey(keys[i]);
+    }
+
+    private void configureNumberKey( int id )
+    {
+        layout.findViewById( id )
+                .setOnClickListener( createNumberOnClickListener() );
+    }
+
+    private View.OnClickListener createNumberOnClickListener()
+    {
+        return new View.OnClickListener()
+        {
+            @Override
+            public void onClick( View view )
+            {
+                String number = ((Button) view).getText().toString();
+                postToBus( new NumberButtonEvent( number ) );
+            }
+        };
+    }
+
+    private void configureOperatorKeys(){
+        int[] keys = new int[]{R.id.keyAdd,R.id.keySub,R.id.keyMul,R.id.keyDiv,R.id.keyMod,R.id.keyClear,R.id.keyEqual};
+        for(int i = 0; i < keys.length; i++)
+            configureNumberKey(keys[i]);
+    }
+
+    private void configureOperatorKey( int id )
+    {
+        layout.findViewById( id )
+                .setOnClickListener( createNumberOnClickListener() );
+    }
+
+    private View.OnClickListener createOperatorOnClickListener()
+    {
+        return  new View.OnClickListener(){
+            @Override
+            public void onClick(View view) {
+                String operator = ((Button) view).getText().toString();
+                postToBus( new OperatorButtonEvent( operator ) );
+            }
+        };
+    }
 
     @Override
     public void onAttach(Activity activity) {
@@ -33,10 +89,11 @@ public class ButtonFragment extends Fragment
                               ViewGroup container,
                               Bundle savedInstanceState )
     {
-        View layout = inflater.inflate( R.layout.buttons,
-                container,
-                false );
+         layout = inflater.inflate( R.layout.buttons,container,false );
+
         Log.d(TAG, "onCreateView()");
+
+        configureNumberKeys();
         return layout;
     }
 
