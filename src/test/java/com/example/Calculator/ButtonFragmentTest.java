@@ -76,13 +76,13 @@ public class ButtonFragmentTest {
         int[] numbers = new int[]{R.id.key0,R.id.key1,R.id.key2,R.id.key3,R.id.key4,R.id.key5,R.id.key6,R.id.key7,R.id.key8,
                     R.id.key9};
 
-        String [] symbols = new String[]{"零", "一","二","三","四","五","六","七","八","九"};
+        /*String [] symbols = new String[]{"零", "一","二","三","四","五","六","七","八","九"};
             for(int j = 0; j< symbols.length; j++){
                 TextView key = (TextView) buttonFragment.getView().findViewById( numbers[j] );
                 assertThat(key.getText().toString(),equalTo(symbols[j]));
 
             }
-        }
+*/        }
 
 
 

@@ -42,5 +42,12 @@ public class CalculatorActivityTest extends TestCase {
         assertNotNull(activity.getFragmentManager().findFragmentById(R.id.button_fragment));
     }
 
+    @Test
+    public void shouldHaveCalculatorStateFragment() throws Exception
+    {
+        assertNotNull( activity.getFragmentManager()
+                .findFragmentByTag( "calculator state" ) );
+    }
+
 
 }
