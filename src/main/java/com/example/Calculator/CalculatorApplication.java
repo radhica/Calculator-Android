@@ -9,7 +9,7 @@ import com.squareup.otto.Bus;
 /**
  * Created by rsampath on 7/15/14.
  */
-public class CalculatorApplication extends Application{
+public class CalculatorApplication extends Application {
 
     private static CalculatorApplication instance = new CalculatorApplication();
     private Bus bus;
@@ -20,19 +20,36 @@ public class CalculatorApplication extends Application{
 
     }*/
 
-    public Bus getBus()
-    {
+    public Bus getBus() {
         return bus;
     }
 
-    public static void postToBus(BaseEvent event)
-    {
+    public static void postToBus(BaseEvent event) {
         getInstance().getBus().post(event);
     }
 
+    public static String add(String operand1, String operand2) {
+        return String.valueOf(Integer.parseInt(operand1) + Integer.parseInt(operand2));
+    }
+
+    public static String subtract(String operand1, String operand2) {
+        return String.valueOf(Integer.parseInt(operand1) - Integer.parseInt(operand2));
+    }
+
+    public static String multiply(String operand1, String operand2) {
+        return String.valueOf(Integer.parseInt(operand1) * Integer.parseInt(operand2));
+    }
+
+    public static String divide(String operand1, String operand2) {
+        return String.valueOf(Integer.parseInt(operand1) / Integer.parseInt(operand2));
+    }
+
+    public static String modulo(String operand1, String operand2) {
+        return String.valueOf(Integer.parseInt(operand1) % Integer.parseInt(operand2));
+    }
+
     @Override
-    public void onCreate()
-    {
+    public void onCreate() {
         super.onCreate();
         instance.bus = new Bus();
         Log.d(TAG, "onCreate()");
@@ -41,7 +58,7 @@ public class CalculatorApplication extends Application{
     @Override
     public void onConfigurationChanged(Configuration newConfig) {
         super.onConfigurationChanged(newConfig);
-        Log.d(TAG,"onConfigurationChanged()");
+        Log.d(TAG, "onConfigurationChanged()");
     }
 
     @Override
@@ -53,11 +70,10 @@ public class CalculatorApplication extends Application{
     @Override
     public void onTrimMemory(int level) {
         super.onTrimMemory(level);
-        Log.d(TAG,"onTrimMemory()");
+        Log.d(TAG, "onTrimMemory()");
     }
 
-    public static CalculatorApplication getInstance()
-    {
+    public static CalculatorApplication getInstance() {
         return instance;
     }
 }

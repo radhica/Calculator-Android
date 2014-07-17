@@ -94,10 +94,9 @@ public class ButtonFragmentTest  {
      @Test
      public void oneShouldPostEvent() throws Exception {
 
-            int[] numbers = new int[]{R.id.key0,R.id.key1,R.id.key2,R.id.key3,R.id.key4,R.id.key5,R.id.key6,R.id.key7,R.id.key8,
-                    R.id.key9};
-         int[] values = new int[]{R.string.key0,R.string.key1,R.string.key2,R.string.key3,R.string.key4,R.string.key5,R.string.key6,R.string.key7,R.string.key8,
-                 R.string.key9};
+            int[] numbers = new int[]{R.id.key0,R.id.key1,R.id.key2,R.id.key3,R.id.key4,R.id.key5,R.id.key6,R.id.key7,
+                    R.id.key8, R.id.key9};
+         int[] values = new int[]{R.string.key0,R.string.key1,R.string.key2,R.string.key3,R.string.key4,R.string.key5,R.string.key6,R.string.key7,R.string.key8, R.string.key9};
 
 
          for(int i = 0 ; i < numbers.length; i++) {
@@ -106,7 +105,8 @@ public class ButtonFragmentTest  {
                 verifyNumberButtonEvent(values[i]);
             }
 
-         int[] operators = new int [] {R.id.keyAdd,R.id.keySub,R.id.keyMul,R.id.keyDiv,R.id.keyMod,R.id.keyClear,R.id.keyEqual};
+         int[] operators = new int [] {R.id.keyAdd,R.id.keySub,R.id.keyMul,R.id.keyDiv,R.id.keyMod,R.id.keyClear,
+                 R.id.keyEqual};
          int[] operatorValues = new int [] {R.string.keyAdd,R.string.keySub,R.string.keyMul,R.string.keyDiv,R.string.keyMod,R.string.keyClear,R.string.keyEqual};
 
 
@@ -124,9 +124,6 @@ public class ButtonFragmentTest  {
             assertThat( ( (NumberButtonEvent) event ).getNumber(),
                     equalTo( getString(id) ) );
         }
-
-
-
 
     }
 

@@ -17,7 +17,8 @@ public class CalculatorStateFragment extends Fragment {
     private String operation;
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
+    {
         return null;
     }
 

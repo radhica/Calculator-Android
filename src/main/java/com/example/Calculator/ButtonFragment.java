@@ -52,13 +52,13 @@ public class ButtonFragment extends BaseFragment
     private void configureOperatorKeys(){
         int[] keys = new int[]{R.id.keyAdd,R.id.keySub,R.id.keyMul,R.id.keyDiv,R.id.keyMod,R.id.keyClear,R.id.keyEqual};
         for(int i = 0; i < keys.length; i++)
-            configureNumberKey(keys[i]);
+            configureOperatorKey(keys[i]);
     }
 
     private void configureOperatorKey( int id )
     {
         layout.findViewById( id )
-                .setOnClickListener( createNumberOnClickListener() );
+                .setOnClickListener( createOperatorOnClickListener() );
     }
 
     private View.OnClickListener createOperatorOnClickListener()
@@ -89,11 +89,12 @@ public class ButtonFragment extends BaseFragment
                               ViewGroup container,
                               Bundle savedInstanceState )
     {
-         layout = inflater.inflate( R.layout.buttons,container,false );
+        layout = inflater.inflate( R.layout.buttons,container,false );
 
         Log.d(TAG, "onCreateView()");
 
         configureNumberKeys();
+        configureOperatorKeys();
         return layout;
     }
 

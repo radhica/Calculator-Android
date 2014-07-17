@@ -8,6 +8,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
+import android.widget.Toast;
 
 /**
  * Created by rsampath on 7/14/14.
@@ -15,7 +16,7 @@ import android.widget.EditText;
 public class DisplayFragment extends Fragment {
     private static final String TAG = "Lifecycle " + DisplayFragment.class.getSimpleName();
     private View layout;
-    private EditText displayText;
+    private EditText output;
 
 
     @Override
@@ -33,7 +34,7 @@ public class DisplayFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         layout = inflater.inflate(R.layout.display,container, false);
-        displayText = findViewById(R.id.display_fragment);
+
         Log.d(TAG, "onCreateView()");
         return layout;
     }
