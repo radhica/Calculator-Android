@@ -7,6 +7,7 @@ import android.util.Log;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
+import com.example.Events.DisplayEvent;
 import com.example.Events.NumberButtonEvent;
 import com.example.Events.OperatorButtonEvent;
 import com.squareup.otto.Bus;
@@ -47,6 +48,7 @@ public class CalculatorActivity extends Activity {
     @Subscribe
     public void onNumberSelected(NumberButtonEvent event) {
 
+
         Toast.makeText(this, "Clicked: " + event.getNumber(),
                 Toast.LENGTH_SHORT).show();
 
@@ -55,13 +57,14 @@ public class CalculatorActivity extends Activity {
         if (calState.getPreviousOperator() == ' ') {
             calState.setPreviousNumber(calState.getPreviousNumber()
                     + event.getNumber());
-            calState.setDisplayText(calculatorState.getPreviousNumber());
+            CalculatorApplication.postToBus(new DisplayEvent(calState.getPreviousNumber()));
         } else {
             calState.setCurrentNumber(calState.getCurrentNumber()
                     + event.getNumber());
+            CalculatorApplication.postToBus(new DisplayEvent(calState.getCurrentNumber()));
         }
         //call fragment to display number
-
+        //CalculatorApplication.postToBus(new DisplayEvent(calState.getPreviousNumber()));
         this.calculatorState = calState;
     }
 
@@ -75,7 +78,12 @@ public class CalculatorActivity extends Activity {
 
         Toast.makeText(this, "Clicked: " + event.getOperator(),
                 Toast.LENGTH_SHORT).show();
+        if(event.getOperator().toString().equals("C"))
+            CalculatorApplication.postToBus(new DisplayEvent(" "));
+        else
+            CalculatorApplication.postToBus(new DisplayEvent(event.getOperator()));
         performOperation(event.getOperator().charAt(0));
+
     }
 
     private void performOperation(char operator) {
@@ -93,6 +101,7 @@ public class CalculatorActivity extends Activity {
                 //calState.setDisplayText(calState.getPreviousNumber());
                 return;
             } else {
+                CalculatorApplication.postToBus(new DisplayEvent(calState.getPreviousNumber()));
                 return;
             }
         }
@@ -127,6 +136,7 @@ public class CalculatorActivity extends Activity {
             default:
                 break;
         }
+        CalculatorApplication.postToBus(new DisplayEvent(prevNumber));
         calState.setPreviousNumber(prevNumber);
 
         if (operator != '=') {

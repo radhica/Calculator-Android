@@ -9,11 +9,13 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
 import android.widget.Toast;
+import com.example.Events.DisplayEvent;
+import com.squareup.otto.Subscribe;
 
 /**
  * Created by rsampath on 7/14/14.
  */
-public class DisplayFragment extends Fragment {
+public class DisplayFragment extends BaseFragment {
     private static final String TAG = "Lifecycle " + DisplayFragment.class.getSimpleName();
     private View layout;
     private EditText output;
@@ -34,12 +36,20 @@ public class DisplayFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         layout = inflater.inflate(R.layout.display,container, false);
-
+        output = (EditText)layout.findViewById(R.id.display);
         Log.d(TAG, "onCreateView()");
         return layout;
     }
 
-    public void onCalculatorStateChanged(){
+
+    @Subscribe
+    public void onDisplayEvent(DisplayEvent event) {
+        Toast.makeText(getActivity(), "Display: " + event.getDisplayText(),
+                Toast.LENGTH_SHORT).show();
+     /*   if (output.getText().toString().equals("C"))
+            output.setText();
+        else*/
+            output.setText(event.getDisplayText());
 
     }
 
