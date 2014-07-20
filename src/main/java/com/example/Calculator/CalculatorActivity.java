@@ -33,10 +33,26 @@ public class CalculatorActivity extends Activity {
 
         Log.d(TAG, "onCreate()");
 
+
         getFragmentManager()
                 .beginTransaction()
                 .add(new CalculatorStateFragment(),
                         CALCULATOR_STATE_FRAGMENT_TAG).commit();
+
+//        if(getResources().getDisplayMetrics().widthPixels>getResources().getDisplayMetrics().
+//                heightPixels)
+//        {
+//            Toast.makeText(this,"Screen switched to Landscape mode",Toast.LENGTH_SHORT).
+//                    show();
+//        }
+//        else
+//        {
+//            Toast.makeText(this,"Screen switched to Portrait mode",Toast.LENGTH_SHORT).
+//                    show();
+//        }
+
+        
+
         calculatorState = new CalculatorState();
     }
 
