@@ -1,14 +1,14 @@
 package com.example.Calculator;
 
-        import android.app.Activity;
-        import android.os.Bundle;
-        import android.util.Log;
-        import android.widget.Toast;
-        import com.example.Events.DisplayEvent;
-        import com.example.Events.NumberButtonEvent;
-        import com.example.Events.OperatorButtonEvent;
-        import com.squareup.otto.Bus;
-        import com.squareup.otto.Subscribe;
+import android.app.Activity;
+import android.os.Bundle;
+import android.util.Log;
+import android.widget.Toast;
+import com.example.Events.DisplayEvent;
+import com.example.Events.NumberButtonEvent;
+import com.example.Events.OperatorButtonEvent;
+import com.squareup.otto.Bus;
+import com.squareup.otto.Subscribe;
 
 
 public class CalculatorActivity extends Activity {
@@ -68,8 +68,6 @@ public class CalculatorActivity extends Activity {
                     + event.getNumber());
             CalculatorApplication.postToBus(new DisplayEvent(calState.getCurrentNumber()));
         }
-        //call fragment to display number
-        //CalculatorApplication.postToBus(new DisplayEvent(calState.getPreviousNumber()));
 
         CalculatorApplication.getInstance().setCalculatorState(calState);
     }
@@ -101,10 +99,10 @@ public class CalculatorActivity extends Activity {
             return;
         }
 
+
         if (calState.getPreviousOperator() == ' ') {
             if (operator != '=') {
                 calState.setPreviousOperator(operator);
-                //calState.setDisplayText(calState.getPreviousNumber());
                 return;
             } else {
                 CalculatorApplication.postToBus(new DisplayEvent(calState.getPreviousNumber()));
@@ -112,23 +110,29 @@ public class CalculatorActivity extends Activity {
             }
         }
 
+        if(calState.getEqualPressed() && operator != '='){
+            calState.setCurrentNumber(new String());
+            calState.setEqualPressed(false);
+            calState.setPreviousOperator(operator);
+            return;
+        }
+
         if (calState.getPreviousNumber().equalsIgnoreCase("")
                 || calState.getCurrentNumber().equalsIgnoreCase("")) {
             return;
         }
+
         String prevNumber = operation(calState);
         CalculatorApplication.postToBus(new DisplayEvent(prevNumber));
         calState.setPreviousNumber(prevNumber);
-
         if (operator != '=') {
             calState.setPreviousOperator(operator);
-
-        } else {
-//            CalculatorApplication.getInstance().setCalculatorState(new CalculatorState());
-//            return;
-            //calState.setPreviousOperator(' ');
+            calState.setCurrentNumber(new String());
         }
-        calState.setCurrentNumber(new String());
+        else{
+            calState.setEqualPressed(true);
+            calState.setPreviousOperator(calState.getPreviousOperator());
+        }
 
         CalculatorApplication.getInstance().setCalculatorState(calState);
     }

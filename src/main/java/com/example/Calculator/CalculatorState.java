@@ -8,15 +8,17 @@ public class CalculatorState {
     private String currentNumber;
     private char currentOperator;
     private char previousOperator;
+    private boolean equalPressed;
 
 
     private String displayText;
 
     CalculatorState(){
-        previousNumber = new String();
+        previousNumber = "0";
         currentNumber = new String();
         setCurrentOperator(' ');
         setPreviousOperator(' ');
+        equalPressed = false;
     }
 
     public String getCurrentNumber() {
@@ -57,6 +59,14 @@ public class CalculatorState {
 
     public void setDisplayText(String displayText) {
         this.displayText = displayText;
+    }
+
+    public boolean getEqualPressed(){
+        return equalPressed;
+    }
+
+    public void setEqualPressed(boolean pressed){
+        this.equalPressed = pressed;
     }
 
 }
