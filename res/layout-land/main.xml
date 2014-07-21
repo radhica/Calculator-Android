@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="fill_parent"
+              android:layout_height="fill_parent"
+              android:weightSum="100">
+
+    <fragment
+            android:id = "@+id/display_fragment"
+            android:name = "com.example.Calculator.DisplayFragment"
+            android:layout_width = "match_parent"
+            android:layout_height = "fill_parent"
+            android:layout_weight="30"/>
+
+    <fragment
+            android:id = "@+id/button_fragment"
+            android:name = "com.example.Calculator.ButtonFragment"
+            android:layout_width = "match_parent"
+            android:layout_height = "fill_parent"
+            android:layout_weight="70"/>
+
+</LinearLayout>
+

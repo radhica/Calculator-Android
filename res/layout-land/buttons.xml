@@ -3,14 +3,14 @@
 <RelativeLayout
         xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:gravity="center">
+        android:layout_height="wrap_content"
+        android:gravity="bottom">
 
     <!--1-->
     <Button
             android:id="@+id/key1"
             style="@style/Number"
-            android:text="@string/key1" android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+            android:text="@string/key1"/>
 
     <!--2-->
     <Button
@@ -18,7 +18,7 @@
             android:layout_toRightOf="@id/key1"
             android:layout_alignBaseline="@id/key1"
             style="@style/Number"
-            android:text="@string/key2" android:layout_height="wrap_content" android:layout_width="wrap_content"/>
+            android:text="@string/key2"/>
 
     <!--3-->
     <Button
@@ -26,14 +26,14 @@
             style="@style/Number"
             android:layout_toRightOf="@id/key2"
             android:layout_alignBaseline="@id/key2"
-            android:text="@string/key3" android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+            android:text="@string/key3"/>
 
     <!--4-->
     <Button
             android:id="@+id/key4"
             style="@style/Number"
             android:layout_below="@id/key1"
-            android:text="@string/key4" android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+            android:text="@string/key4"/>
 
     <!--5-->
     <Button
@@ -41,7 +41,7 @@
             android:layout_toRightOf="@id/key4"
             style="@style/Number"
             android:layout_below="@id/key2"
-            android:text="@string/key5" android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+            android:text="@string/key5"/>
 
     <!--6-->
     <Button
@@ -49,14 +49,14 @@
             android:layout_toRightOf="@id/key5"
             style="@style/Number"
             android:layout_below="@id/key3"
-            android:text="@string/key6" android:layout_height="wrap_content" android:layout_width="wrap_content"/>
+            android:text="@string/key6"/>
 
     <!--7-->
     <Button
             android:id="@+id/key7"
             style="@style/Number"
             android:layout_below="@id/key4"
-            android:text="@string/key7" android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+            android:text="@string/key7"/>
 
     <!--8-->
     <Button
@@ -64,7 +64,7 @@
             android:layout_toRightOf="@id/key7"
             style="@style/Number"
             android:layout_below="@id/key5"
-            android:text="@string/key8" android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+            android:text="@string/key8"/>
 
     <!--9-->
     <Button
@@ -72,14 +72,14 @@
             android:layout_toRightOf="@id/key8"
             style="@style/Number"
             android:layout_below="@id/key6"
-            android:text="@string/key9" android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+            android:text="@string/key9"/>
 
     <!--0-->
     <Button
             android:id = "@+id/key0"
             style="@style/Zero"
             android:layout_below="@id/key7"
-            android:text="@string/key0" android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+            android:text="@string/key0"/>
 
     <!--%-->
     <Button
@@ -87,15 +87,15 @@
             style="@style/Operator"
             android:layout_toRightOf="@id/key0"
             android:layout_below="@id/key9"
-            android:text="@string/keyMod" android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+            android:text="@string/keyMod"/>
 
     <!--+-->
     <Button
             android:id = "@+id/keyAdd"
             style="@style/Operator"
             android:layout_toRightOf="@id/key3"
-            android:text="@string/keyAdd" android:layout_width="wrap_content" android:layout_height="wrap_content"/>
-            />
+            android:text="@string/keyAdd"/>
+
 
     <!-- - -->
     <Button
@@ -103,7 +103,7 @@
             style="@style/Operator"
             android:layout_toRightOf="@id/key6"
             android:layout_below="@id/keyAdd"
-            android:text="@string/keySub" android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+            android:text="@string/keySub"/>
 
     <!-- * -->
     <Button
@@ -111,7 +111,7 @@
             style="@style/Operator"
             android:layout_toRightOf="@id/key9"
             android:layout_below="@id/keySub"
-            android:text="@string/keyMul" android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+            android:text="@string/keyMul"/>
 
     <!-- / -->
     <Button
@@ -119,22 +119,22 @@
             style="@style/Operator"
             android:layout_toRightOf="@id/keyMod"
             android:layout_below="@id/keyMul"
-            android:text="@string/keyDiv" android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+            android:text="@string/keyDiv"/>
 
     <!--Clear-->
     <Button
             android:id="@+id/keyClear"
             style="@style/Clear"
             android:layout_below="@id/key0"
-            android:text="@string/keyClear" android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+            android:text="@string/keyClear"/>
 
     <!-- = -->
     <Button
             android:id = "@+id/keyEqual"
-           style="@style/Equals"
+            style="@style/Equals"
             android:layout_toRightOf="@id/keyClear"
             android:layout_below="@id/key0"
-            android:text="@string/keyEqual" android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+            android:text="@string/keyEqual"/>
 
 
 

@@ -1,19 +1,15 @@
 package com.example.Calculator;
 
-import android.app.Activity;
-import android.app.Fragment;
-import android.os.Bundle;
-import android.util.Log;
-import android.widget.EditText;
-import android.widget.TextView;
-import android.widget.Toast;
-import com.example.Events.DisplayEvent;
-import com.example.Events.NumberButtonEvent;
-import com.example.Events.OperatorButtonEvent;
-import com.squareup.otto.Bus;
-import com.squareup.otto.Subscribe;
+        import android.app.Activity;
+        import android.os.Bundle;
+        import android.util.Log;
+        import android.widget.Toast;
+        import com.example.Events.DisplayEvent;
+        import com.example.Events.NumberButtonEvent;
+        import com.example.Events.OperatorButtonEvent;
+        import com.squareup.otto.Bus;
+        import com.squareup.otto.Subscribe;
 
-import java.util.concurrent.Phaser;
 
 public class CalculatorActivity extends Activity {
     /**
@@ -24,7 +20,7 @@ public class CalculatorActivity extends Activity {
 
     public static final String CALCULATOR_STATE_FRAGMENT_TAG = "calculator state";
 
-    private CalculatorState calculatorState;
+
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -34,26 +30,19 @@ public class CalculatorActivity extends Activity {
         Log.d(TAG, "onCreate()");
 
 
-        getFragmentManager()
-                .beginTransaction()
-                .add(new CalculatorStateFragment(),
-                        CALCULATOR_STATE_FRAGMENT_TAG).commit();
 
-//        if(getResources().getDisplayMetrics().widthPixels>getResources().getDisplayMetrics().
-//                heightPixels)
-//        {
-//            Toast.makeText(this,"Screen switched to Landscape mode",Toast.LENGTH_SHORT).
-//                    show();
-//        }
-//        else
-//        {
-//            Toast.makeText(this,"Screen switched to Portrait mode",Toast.LENGTH_SHORT).
-//                    show();
-//        }
+        if(getResources().getDisplayMetrics().widthPixels>getResources().getDisplayMetrics().
+                heightPixels)
+        {
+            Toast.makeText(this,"Screen switched to Landscape mode",Toast.LENGTH_SHORT).
+                    show();
+        }
+        else
+        {
+            Toast.makeText(this,"Screen switched to Portrait mode",Toast.LENGTH_SHORT).
+                    show();
+        }
 
-        
-
-        calculatorState = new CalculatorState();
     }
 
     /**
@@ -68,7 +57,7 @@ public class CalculatorActivity extends Activity {
         Toast.makeText(this, "Clicked: " + event.getNumber(),
                 Toast.LENGTH_SHORT).show();
 
-        CalculatorState calState = this.calculatorState;
+        CalculatorState calState = CalculatorApplication.getInstance().getCalculatorState();
 
         if (calState.getPreviousOperator() == ' ') {
             calState.setPreviousNumber(calState.getPreviousNumber()
@@ -81,7 +70,8 @@ public class CalculatorActivity extends Activity {
         }
         //call fragment to display number
         //CalculatorApplication.postToBus(new DisplayEvent(calState.getPreviousNumber()));
-        this.calculatorState = calState;
+
+        CalculatorApplication.getInstance().setCalculatorState(calState);
     }
 
     /**
@@ -103,11 +93,11 @@ public class CalculatorActivity extends Activity {
     }
 
     private void performOperation(char operator) {
-        CalculatorState calState = this.calculatorState;
+        CalculatorState calState = CalculatorApplication.getInstance().getCalculatorState();
 
 
         if(operator == 'C'){
-            this.calculatorState = new CalculatorState();
+            CalculatorApplication.getInstance().setCalculatorState(new CalculatorState());
             return;
         }
 
@@ -126,6 +116,24 @@ public class CalculatorActivity extends Activity {
                 || calState.getCurrentNumber().equalsIgnoreCase("")) {
             return;
         }
+        String prevNumber = operation(calState);
+        CalculatorApplication.postToBus(new DisplayEvent(prevNumber));
+        calState.setPreviousNumber(prevNumber);
+
+        if (operator != '=') {
+            calState.setPreviousOperator(operator);
+
+        } else {
+//            CalculatorApplication.getInstance().setCalculatorState(new CalculatorState());
+//            return;
+            //calState.setPreviousOperator(' ');
+        }
+        calState.setCurrentNumber(new String());
+
+        CalculatorApplication.getInstance().setCalculatorState(calState);
+    }
+
+    private String operation(CalculatorState calState){
         String prevNumber = new String();
         //calState.setDisplayText(calculatorState.getPreviousNumber());
         switch (calState.getPreviousOperator()) {
@@ -152,19 +160,7 @@ public class CalculatorActivity extends Activity {
             default:
                 break;
         }
-        CalculatorApplication.postToBus(new DisplayEvent(prevNumber));
-        calState.setPreviousNumber(prevNumber);
-
-        if (operator != '=') {
-            calState.setPreviousOperator(operator);
-
-        } else {
-            calState.setPreviousOperator(' ');
-        }
-        calState.setCurrentNumber(new String());
-        //call fragment to display previous number
-
-        this.calculatorState = calState;
+        return prevNumber;
     }
 
     @Override
